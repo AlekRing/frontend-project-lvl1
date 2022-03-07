@@ -1,0 +1,26 @@
+{
+  "name": "@alek_ring/code",
+  "version": "1.0.0",
+  "description": "hexlet project",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekRing/frontend-project-lvl1.git"
+  },
+  "author": "Oleg Koltcov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekRing/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/AlekRing/frontend-project-lvl1#readme",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
+}
