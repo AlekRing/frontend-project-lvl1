@@ -1,0 +1,15 @@
+name: hexlet-check
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '**'
+
+jobs:
+  makeLint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: lets lint
+        run: lint
