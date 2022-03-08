@@ -11,6 +11,5 @@
     import/extensions:
       - error
       - ignorePackages
-      - js: never
-      - mjs: never
+      - js: always
   reportUnusedDisableDirectives: true

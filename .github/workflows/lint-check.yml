@@ -1,15 +1,15 @@
 name: lint-check
 
-on:
-  push:
-    branches:
-      - '**'
-    tags:
-      - '**'
+on: push
 
 jobs:
-  makeLint:
+  run-linters:
     runs-on: ubuntu-latest
     steps:
-      - name: lint-check
-        run: lint
+      - uses: actions/checkout@v2
+
+      - name: Install Node.js dependencies
+        run: make install
+
+      - name: Lint
+        run: make lint
