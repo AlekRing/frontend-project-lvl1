@@ -8,6 +8,8 @@
     quotes:
       - warn
       - single
+    indent: 1
+    no-plusplus: 0
     import/extensions:
       - error
       - ignorePackages
