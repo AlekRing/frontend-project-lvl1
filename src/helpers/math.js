@@ -6,4 +6,12 @@ function isNaN(answer) {
   return Number.isNaN(+answer);
 }
 
-export { getRandomNumber, isNaN };
+function findGreatestCommonDivisor(firstNumber, secondNumber) {
+  if (!secondNumber) {
+    return firstNumber;
+  }
+
+  return findGreatestCommonDivisor(secondNumber, firstNumber % secondNumber);
+}
+
+export { getRandomNumber, isNaN, findGreatestCommonDivisor };

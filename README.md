@@ -5,3 +5,6 @@
 
 ### Brain-even game you can see at: [Brain-even](https://asciinema.org/a/6LpgBs2tvwKI8QVo4iR5qXRfN)
 ### Brain-calc game you can see at: [Brain-calc](https://asciinema.org/a/PdXCmb2Pl2C9Yx8s7WWHIbyaI)
+
+### Brain-gcd game you can see at: [Brain-gcd](https://asciinema.org/a/rFNqsInjwwuAEqXyQzsq35vDo)
+

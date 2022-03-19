@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { isNaN, getRandomNumber } from './helpers/math.js';
 import log from './helpers/log.js';
 
 export const MAX_ROUNDS_COUNT = 3;
@@ -7,12 +8,13 @@ function getUserName() {
   return readlineSync.question('May I have your name? ');
 }
 
-export function greetAndGetUserName(greeting = 'Hi') {
-  console.log('Welcome to the Brain Games!');
+export function greetAndGetUserName(greeting = 'Hi', task = '') {
+  log('Welcome to the Brain Games!');
 
   const userName = getUserName();
 
-  console.log(`${greeting} ${userName}!`);
+  log(`${greeting} ${userName}!`);
+  log(task);
 
   return userName;
 }
@@ -40,9 +42,34 @@ export function playGameCycle(userName, playRound, rounds = MAX_ROUNDS_COUNT) {
     }
   }
 
-  return log('Something is wrong!');
+  return log('"playGameCycle" arguments are incorrect!');
+}
+
+export function startRound(sayQuestion) {
+  const firstNumber = getRandomNumber();
+  const secondNumber = getRandomNumber();
+
+  sayQuestion(firstNumber, secondNumber);
+
+  return { firstNumber, secondNumber };
 }
 
 export function askAnswer() {
   return readlineSync.question('Your answer: ');
+}
+
+export function checkAnswer(answer, correctAnswer) {
+  if (isNaN(answer)) return false;
+
+  return +answer === correctAnswer;
+}
+
+export function getAndCheckAnswerStage(correctAnswer) {
+  const answer = askAnswer();
+
+  const isRightAnswer = checkAnswer(answer, correctAnswer);
+
+  if (isRightAnswer) log('Correct!');
+
+  return { isRightAnswer, answer, correctAnswer };
 }

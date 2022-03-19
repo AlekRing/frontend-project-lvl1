@@ -1,47 +1,29 @@
 import log from '../helpers/log.js';
-import { getRandomNumber, isNaN } from '../helpers/math.js';
+import { getRandomNumber } from '../helpers/math.js';
 import {
   greetAndGetUserName,
   playGameCycle,
-  askAnswer,
+  startRound,
+  getAndCheckAnswerStage,
 } from '../index.js';
 
 import alowedOperations from '../data/brain-calc-data.js';
 
-function checkAnswer(answer, correctAnswer) {
-  if (isNaN(answer)) return false;
-
-  return +answer === correctAnswer;
-}
-
-function startRound(operation) {
-  const firstNumberToCalculate = getRandomNumber();
-  const secondNumberToCalculate = getRandomNumber();
-
-  log('What is the result of the expression?');
-  log('Question: ', `${firstNumberToCalculate} ${operation.operator} ${secondNumberToCalculate}`);
-
-  return { firstNumberToCalculate, secondNumberToCalculate };
-}
+const getQuestion = (operation) => (firstNumber, secondNumber) => {
+  log('Question: ', `${firstNumber} ${operation.operator} ${secondNumber}`);
+};
 
 function playRound() {
   const operation = alowedOperations[getRandomNumber(3)];
-  let answer = null;
 
-  const { firstNumberToCalculate, secondNumberToCalculate } = startRound(operation);
-  const correctAnswer = operation.operation(firstNumberToCalculate, secondNumberToCalculate);
+  const { firstNumber, secondNumber } = startRound(getQuestion(operation));
+  const correctAnswer = operation.operation(firstNumber, secondNumber);
 
-  answer = askAnswer();
-
-  const isRightAnswer = checkAnswer(answer, correctAnswer);
-
-  if (isRightAnswer) log('Correct!');
-
-  return { isRightAnswer, answer, correctAnswer };
+  return getAndCheckAnswerStage(correctAnswer);
 }
 
 function brainCalc() {
-  const userName = greetAndGetUserName('Hello');
+  const userName = greetAndGetUserName('Hello', 'What is the result of the expression?');
 
   playGameCycle(userName, playRound);
 }
