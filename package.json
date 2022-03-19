@@ -1,6 +1,6 @@
 {
   "name": "@alek_ring/code",
-  "version": "1.2.2",
+  "version": "1.2.1",
   "description": "hexlet project",
   "main": "index.js",
   "publishConfig": {
