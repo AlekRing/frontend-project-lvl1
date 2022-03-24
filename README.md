@@ -8,3 +8,6 @@
 
 ### Brain-gcd game you can see at: [Brain-gcd](https://asciinema.org/a/rFNqsInjwwuAEqXyQzsq35vDo)
 
+### Brain-porgression game you can see at: [Brain-porgression](https://asciinema.org/a/Kv63JnjbdB4spu1iyJKgC4W9g)
+
+
