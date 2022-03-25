@@ -34,7 +34,7 @@ export const handleWrongAnswer = (answer, correctAnswer) => () => {
 };
 
 export function playGameCycle(userName, playRound, rounds = MAX_ROUNDS_COUNT) {
-  for (let round = 1; round <= rounds; round++) {
+  for (let round = 1; round <= rounds; round += 1) {
     const { isRightAnswer, answer, correctAnswer } = playRound();
 
     if (round === rounds || !isRightAnswer) {

@@ -12,7 +12,7 @@ function getProgression() {
 
   const progression = [startOfProgression];
 
-  for (let i = 1; i < 10; i++) {
+  for (let i = 1; i < 10; i += 1) {
     progression[i] = progression[i - 1] + progressionStep;
   }
 
