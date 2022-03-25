@@ -26,7 +26,7 @@ function getCorrectAnswer(answer, isRightAnswer) {
 function playRound() {
   const randomNumber = getRandomNumber();
 
-  log('Question: ', randomNumber);
+  log('Question:', randomNumber);
 
   const answer = askAnswer();
 
