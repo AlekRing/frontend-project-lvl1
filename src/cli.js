@@ -1,5 +1,9 @@
+import {
+  greetAndGetUserName,
+} from './index.js';
+
 function greet() {
-  console.log('Hello, Tirion');
+  greetAndGetUserName();
 }
 
 export default greet;
