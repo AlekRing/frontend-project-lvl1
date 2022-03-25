@@ -1,6 +1,6 @@
 {
-  "name": "@alek_ring/code",
-  "version": "1.4.3",
+  "name": "@hexlet/code",
+  "version": "1.4.4",
   "description": "hexlet project",
   "main": "index.js",
   "publishConfig": {
