@@ -8,7 +8,7 @@ import {
 } from '../index.js';
 
 function getQuestion(firstNumber, secondNumber) {
-  log('Question: ', `${firstNumber} ${secondNumber}`);
+  log('Question:', `${firstNumber} ${secondNumber}`);
 }
 
 function playRound() {

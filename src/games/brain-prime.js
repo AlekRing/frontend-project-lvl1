@@ -17,7 +17,7 @@ function initiatePositiveAnswerRound(number) {
 
 function initiateNegativeAnswerRound(number) {
   const correctAnswer = 'no';
-  log('Question: ', number);
+  log('Question:', number);
 
   return getAndCheckAnswerStage(correctAnswer);
 }

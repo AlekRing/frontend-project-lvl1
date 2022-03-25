@@ -10,7 +10,7 @@ import {
 import alowedOperations from '../data/brain-calc-data.js';
 
 const getQuestion = (operation) => (firstNumber, secondNumber) => {
-  log('Question: ', `${firstNumber} ${operation.operator} ${secondNumber}`);
+  log('Question:', `${firstNumber} ${operation.operator} ${secondNumber}`);
 };
 
 function playRound() {

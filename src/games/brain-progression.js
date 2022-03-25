@@ -27,7 +27,7 @@ function playRound() {
 
   progression[randomIndex] = '..';
 
-  log('Question: ', progression.join(' '));
+  log('Question:', progression.join(' '));
 
   return getAndCheckAnswerStage(correctAnswer);
 }
