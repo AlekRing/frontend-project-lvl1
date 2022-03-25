@@ -10,4 +10,4 @@
 
 ### Brain-porgression game you can see at: [Brain-porgression](https://asciinema.org/a/Kv63JnjbdB4spu1iyJKgC4W9g)
 
-
+### Brain-prime game you can see at: [Brain-prime](https://asciinema.org/a/KVgxIBJO7f1hzv6J5XKveY7dw)

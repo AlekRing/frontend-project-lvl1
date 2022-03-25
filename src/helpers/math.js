@@ -14,4 +14,18 @@ function findGreatestCommonDivisor(firstNumber, secondNumber) {
   return findGreatestCommonDivisor(secondNumber, firstNumber % secondNumber);
 }
 
-export { getRandomNumber, isNaN, findGreatestCommonDivisor };
+function checkIfIsPrime(number) {
+  if (number <= 3) return number > 1;
+  if ((number % 2 === 0) || (number % 3 === 0)) return false;
+
+  let isPrime = true;
+
+  for (let i = 5; i ** 2 < number; i += 6) {
+    if ((number % i === 0) || number % (i + 2) === 0) isPrime = false;
+  }
+  return isPrime;
+}
+
+export {
+  getRandomNumber, isNaN, findGreatestCommonDivisor, checkIfIsPrime,
+};

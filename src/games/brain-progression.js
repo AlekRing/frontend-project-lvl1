@@ -33,7 +33,7 @@ function playRound() {
 }
 
 function brainProgression() {
-  const userName = greetAndGetUserName('Hello', 'What number is missing in the progression?');
+  const userName = greetAndGetUserName('What number is missing in the progression?');
 
   playGameCycle(userName, playRound);
 }

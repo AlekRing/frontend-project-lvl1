@@ -20,7 +20,7 @@ function playRound() {
 }
 
 function brainGcd() {
-  const userName = greetAndGetUserName('Hello', 'Find the greatest common divisor of given numbers.');
+  const userName = greetAndGetUserName('Find the greatest common divisor of given numbers.');
 
   playGameCycle(userName, playRound);
 }

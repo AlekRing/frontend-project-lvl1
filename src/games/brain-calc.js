@@ -23,7 +23,7 @@ function playRound() {
 }
 
 function brainCalc() {
-  const userName = greetAndGetUserName('Hello', 'What is the result of the expression?');
+  const userName = greetAndGetUserName('What is the result of the expression?');
 
   playGameCycle(userName, playRound);
 }

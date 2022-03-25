@@ -40,9 +40,7 @@ function playRound() {
 }
 
 function brainEven() {
-  const userName = greetAndGetUserName();
-
-  log('Answer "yes" if the number is even, otherwise answer "no".');
+  const userName = greetAndGetUserName('Answer "yes" if the number is even, otherwise answer "no".');
 
   playGameCycle(userName, playRound);
 }

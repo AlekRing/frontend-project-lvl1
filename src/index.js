@@ -8,12 +8,12 @@ function getUserName() {
   return readlineSync.question('May I have your name? ');
 }
 
-export function greetAndGetUserName(greeting = 'Hi', task = '') {
+export function greetAndGetUserName(task = '') {
   log('Welcome to the Brain Games!');
 
   const userName = getUserName();
 
-  log(`${greeting} ${userName}!`);
+  log(`Hello, ${userName}!`);
   log(task);
 
   return userName;
@@ -64,10 +64,14 @@ export function checkAnswer(answer, correctAnswer) {
   return +answer === correctAnswer;
 }
 
+function checKStringAnswer(answer, correctAnswer) {
+  return answer === correctAnswer;
+}
+
 export function getAndCheckAnswerStage(correctAnswer) {
   const answer = askAnswer();
 
-  const isRightAnswer = checkAnswer(answer, correctAnswer);
+  const isRightAnswer = typeof (correctAnswer) === 'number' ? checkAnswer(answer, correctAnswer) : checKStringAnswer(answer, correctAnswer);
 
   if (isRightAnswer) log('Correct!');
 
