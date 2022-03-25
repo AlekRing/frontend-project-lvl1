@@ -10,7 +10,7 @@ import primeNumbers from '../data/primeNumbers.js';
 
 function initiatePositiveAnswerRound(number) {
   const correctAnswer = 'yes';
-  log('Question: ', number);
+  log('Question:', number);
 
   return getAndCheckAnswerStage(correctAnswer);
 }
