@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const MAX_ROUNDS_COUNT = 3;
 
-const main = (task, generateQuestion) => {
+const main = (task, generateRound) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
@@ -12,7 +12,7 @@ const main = (task, generateQuestion) => {
 
   let isUserRight = true;
   for (let i = 0; i < MAX_ROUNDS_COUNT; i += 1) {
-    const { question, correct } = generateQuestion();
+    const { question, correct } = generateRound();
     console.log('Question:', question);
 
     const answer = readlineSync.question('Your answer: ');
