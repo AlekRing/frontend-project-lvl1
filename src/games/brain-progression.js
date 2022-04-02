@@ -1,12 +1,7 @@
-import log from '../helpers/log.js';
+import main from '../main.js';
 import { getRandomNumber } from '../helpers/math.js';
-import {
-  greetAndGetUserName,
-  playGameCycle,
-  getAndCheckAnswerStage,
-} from '../index.js';
 
-function getProgression() {
+const getProgression = () => {
   const startOfProgression = getRandomNumber();
   const progressionStep = getRandomNumber();
 
@@ -17,25 +12,21 @@ function getProgression() {
   }
 
   return progression;
-}
+};
 
-function playRound() {
+const generate = () => {
   const randomIndex = getRandomNumber(10);
 
   const progression = getProgression();
-  const correctAnswer = progression[randomIndex];
+  const correct = progression[randomIndex];
 
   progression[randomIndex] = '..';
 
-  log('Question:', progression.join(' '));
+  return { question: progression.join(' '), correct: `${correct}` };
+};
 
-  return getAndCheckAnswerStage(correctAnswer);
-}
-
-function brainProgression() {
-  const userName = greetAndGetUserName('What number is missing in the progression?');
-
-  playGameCycle(userName, playRound);
-}
+const brainProgression = () => {
+  main('What number is missing in the progression?', generate);
+};
 
 export default brainProgression;

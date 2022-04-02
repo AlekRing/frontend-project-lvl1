@@ -1,28 +1,17 @@
-import log from '../helpers/log.js';
-import { findGreatestCommonDivisor } from '../helpers/math.js';
-import {
-  greetAndGetUserName,
-  playGameCycle,
-  startRound,
-  getAndCheckAnswerStage,
-} from '../index.js';
+import main from '../main.js';
+import { findGreatestCommonDivisor, getRandomNumber } from '../helpers/math.js';
 
-function getQuestion(firstNumber, secondNumber) {
-  log('Question:', `${firstNumber} ${secondNumber}`);
-}
+const generate = () => {
+  const firstNum = getRandomNumber();
+  const secondNum = getRandomNumber();
 
-function playRound() {
-  const { firstNumber, secondNumber } = startRound(getQuestion);
+  const correct = findGreatestCommonDivisor(firstNum, secondNum + firstNum);
 
-  const correctAnswer = findGreatestCommonDivisor(firstNumber, secondNumber + firstNumber);
+  return { question: `${firstNum} ${secondNum}`, correct: `${correct}` };
+};
 
-  return getAndCheckAnswerStage(correctAnswer);
-}
-
-function brainGcd() {
-  const userName = greetAndGetUserName('Find the greatest common divisor of given numbers.');
-
-  playGameCycle(userName, playRound);
-}
+const brainGcd = () => {
+  main('Find the greatest common divisor of given numbers.', generate);
+};
 
 export default brainGcd;

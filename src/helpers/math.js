@@ -1,20 +1,14 @@
-function getRandomNumber(max = 100) {
-  return Math.floor(Math.random() * max);
-}
+const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
 
-function isNaN(answer) {
-  return Number.isNaN(+answer);
-}
-
-function findGreatestCommonDivisor(firstNumber, secondNumber) {
+const findGreatestCommonDivisor = (firstNumber, secondNumber) => {
   if (!secondNumber) {
     return firstNumber;
   }
 
   return findGreatestCommonDivisor(secondNumber, firstNumber % secondNumber);
-}
+};
 
-function checkIfIsPrime(number) {
+const checkIfIsPrime = (number) => {
   if (number <= 3) return number > 1;
   if ((number % 2 === 0) || (number % 3 === 0)) return false;
 
@@ -24,8 +18,8 @@ function checkIfIsPrime(number) {
     if ((number % i === 0) || number % (i + 2) === 0) isPrime = false;
   }
   return isPrime;
-}
+};
 
 export {
-  getRandomNumber, isNaN, findGreatestCommonDivisor, checkIfIsPrime,
+  getRandomNumber, findGreatestCommonDivisor, checkIfIsPrime,
 };
