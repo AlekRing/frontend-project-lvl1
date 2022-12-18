@@ -6,9 +6,6 @@ const calculationMapping = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
   '*': (a, b) => a * b,
-  '**': (a, b) => a ** b,
-  '/': (a, b) => Math.round(a / b),
-  '%': (a, b) => a % b,
 };
 
 const generate = () => {
