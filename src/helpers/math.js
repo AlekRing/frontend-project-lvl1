@@ -1,25 +1,24 @@
 const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
 
-const findGreatestCommonDivisor = (firstNumber, secondNumber) => {
-  if (!secondNumber) {
-    return firstNumber;
+const findGCD = (firstNumber, secondNumber) => {
+  if (secondNumber !== 0) {
+    const k = firstNumber % secondNumber;
+    return findGCD(secondNumber, k);
   }
-
-  return findGreatestCommonDivisor(secondNumber, firstNumber % secondNumber);
+  return firstNumber;
 };
 
-const checkIfIsPrime = (number) => {
+const isPrime = (number) => {
   if (number <= 3) return number > 1;
   if ((number % 2 === 0) || (number % 3 === 0)) return false;
 
-  let isPrime = true;
-
   for (let i = 5; i ** 2 < number; i += 6) {
-    if ((number % i === 0) || number % (i + 2) === 0) isPrime = false;
+    if ((number % i === 0) || number % (i + 2) === 0) return false;
   }
-  return isPrime;
+
+  return true;
 };
 
 export {
-  getRandomNumber, findGreatestCommonDivisor, checkIfIsPrime,
+  getRandomNumber, findGCD, isPrime,
 };

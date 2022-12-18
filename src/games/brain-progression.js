@@ -1,6 +1,8 @@
 import main from '../main.js';
 import { getRandomNumber } from '../helpers/math.js';
 
+const description = 'What number is missing in the progression?';
+
 const getProgression = () => {
   const startOfProgression = getRandomNumber();
   const progressionStep = getRandomNumber();
@@ -25,8 +27,4 @@ const generate = () => {
   return { question: progression.join(' '), correct: `${correct}` };
 };
 
-const brainProgression = () => {
-  main('What number is missing in the progression?', generate);
-};
-
-export default brainProgression;
+export default () => main(description, generate);

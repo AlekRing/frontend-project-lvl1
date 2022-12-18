@@ -1,5 +1,5 @@
 import main from '../main.js';
-import { getRandomNumber, checkIfIsPrime } from '../helpers/math.js';
+import { getRandomNumber, isPrime } from '../helpers/math.js';
 
 const primeNumbers = [
   7, 19, 37, 61, 127, 271, 331, 397, 547, 631, 919, 1657, 1801, 1951, 2269,
@@ -10,27 +10,20 @@ const primeNumbers = [
   37633, 43201, 47629, 60493, 63949, 65713, 69313, 73009, 76801, 84673, 106033,
   108301, 112909, 115249,
 ];
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const generate = () => {
   const randomIndex = getRandomNumber(primeNumbers.length);
-  const randomChanceToGetPrime = getRandomNumber();
+  const chanceToGetPrime = getRandomNumber();
 
-  if (randomChanceToGetPrime <= 40) {
+  if (chanceToGetPrime <= 40) {
     return { question: primeNumbers[randomIndex], correct: 'yes' };
   }
 
-  const randomNumber = getRandomNumber(1000);
-  const isPrime = checkIfIsPrime(randomNumber);
+  const roundNumber = getRandomNumber(1000);
+  const correctAnswer = isPrime(roundNumber) ? 'yes' : 'no';
 
-  if (isPrime) {
-    return { question: randomNumber, correct: 'yes' };
-  }
-
-  return { question: randomNumber, correct: 'no' };
+  return { question: roundNumber, correct: correctAnswer };
 };
 
-const brainPrime = () => {
-  main('Answer "yes" if given number is prime. Otherwise answer "no".', generate);
-};
-
-export default brainPrime;
+export default () => main(description, generate);

@@ -1,42 +1,29 @@
 import main from '../main.js';
 import { getRandomNumber } from '../helpers/math.js';
 
-const alowedOperations = [
-  {
-    operator: '+',
-    operation(a, b) {
-      return a + b;
-    },
-  },
-  {
-    operator: '-',
-    operation(a, b) {
-      return a - b;
-    },
-  },
-  {
-    operator: '*',
-    operation(a, b) {
-      return a * b;
-    },
-  },
-];
+const description = 'What is the result of the expression?';
+const calculationMapping = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
+  '**': (a, b) => a ** b,
+  '/': (a, b) => Math.round(a / b),
+  '%': (a, b) => a % b,
+};
 
 const generate = () => {
   const firstNum = getRandomNumber();
   const secondNum = getRandomNumber();
 
-  const operationIndex = getRandomNumber(alowedOperations.length);
-  const operationObj = alowedOperations[operationIndex];
+  const operators = Object.keys(calculationMapping);
 
-  const correct = operationObj.operation(firstNum, secondNum);
-  const question = `${firstNum} ${operationObj.operator} ${secondNum}`;
+  const operationIndex = getRandomNumber(operators.length - 1);
+  const operator = operators[operationIndex];
+
+  const correct = calculationMapping[operator](firstNum, secondNum);
+  const question = `${firstNum} ${operator} ${secondNum}`;
 
   return { question, correct: `${correct}` };
 };
 
-const brainCalc = () => {
-  main('What is the result of the expression?', generate);
-};
-
-export default brainCalc;
+export default () => main(description, generate);

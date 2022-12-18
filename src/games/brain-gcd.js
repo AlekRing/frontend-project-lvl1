@@ -1,17 +1,15 @@
 import main from '../main.js';
-import { findGreatestCommonDivisor, getRandomNumber } from '../helpers/math.js';
+import { findGCD, getRandomNumber } from '../helpers/math.js';
+
+const description = 'Find the greatest common divisor of given numbers.';
 
 const generate = () => {
   const firstNum = getRandomNumber();
   const secondNum = getRandomNumber();
 
-  const correct = findGreatestCommonDivisor(firstNum, secondNum + firstNum);
+  const correct = findGCD(firstNum, secondNum);
 
   return { question: `${firstNum} ${secondNum}`, correct: `${correct}` };
 };
 
-const brainGcd = () => {
-  main('Find the greatest common divisor of given numbers.', generate);
-};
-
-export default brainGcd;
+export default () => main(description, generate);
